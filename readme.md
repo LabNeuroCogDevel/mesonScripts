@@ -19,5 +19,4 @@ Previous automation pulled from `meson` while on `wallace`.  This previous direc
    * **DO NOT** put a `skipme` file in a directory whos link needs to be or has been named differently (e.g. to fix malformed date). The scripts check for links with different names before linking in missing directories already. Incorrectly named directories do not need to be skipped
 
 ## TODO
- * get physio
  * run things on wallaces side (FS, mprage preproc)
