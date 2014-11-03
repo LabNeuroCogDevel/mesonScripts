@@ -1,8 +1,9 @@
 MAILTO=willforan+upmc@gmail.com
 # min  #hour  #everyday #cmd
 # daily rsync over new scans (from yesterday)
-0       5    *  *  *  /home/kaihwang/scripts/01_checkDaily.bash
 0       5    *  *  *  /home/kaihwang/scripts/00_rsync_physio.bash
+0       5    *  *  *  /home/kaihwang/scripts/01_checkDaily.bash
+0       6    *  *  1  /home/kaihwang/scripts/02_linkMBIntoSubj.bash
 # weekly link all
 0       1    *  *  1  /home/kaihwang/scripts/00_linkAll.bash
 0       3    *  *  1  /home/kaihwang/scripts/00_rsync.bash

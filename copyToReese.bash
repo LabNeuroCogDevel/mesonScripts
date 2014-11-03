@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+
+#
+# copy cron and script to somewhere that has git
+# so this can all be version tracked
+#
+
 message="auto update $(date +%F)"
 [ -n "$1" ] && message=$1;
 
