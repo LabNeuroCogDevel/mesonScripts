@@ -18,13 +18,17 @@ for proj in ~/MRprojects/*; do
  
  ls -d $linkdir/*/ | xargs -n 1 readlink -f > $linklist
  
- find $rawdir -maxdepth 2 -type d -name '[0-9][0-9][0-9][0-9][0-9]_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' | while read  f; do
+ find $rawdir -maxdepth 2 -type d -name '[0-9][0-9][0-9][0-9][0-9][_-][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' | while read  f; do
    # get cononical path
    f=$(readlink -f $f)
 
    # skip known bads
    [ -r $f/skipme ] && continue
-   savename="$linkdir/$(basename $f)"
+
+   # remove "-" to "_" if in scan dir subject id name 
+   subjid=$(basename $f)
+   subjid=${subjid//-/_}
+   savename="$linkdir/$subjid"
 
    # skip if we already have the link
    if [ -h "$savename" ]; then
