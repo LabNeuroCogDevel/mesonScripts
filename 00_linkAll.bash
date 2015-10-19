@@ -3,6 +3,8 @@
 scriptdir=$(cd $(dirname $0);pwd)
 
 for proj in ~/MRprojects/*; do
+ # pet is special
+ [ "$proj" == "mMRDA-dev" ] && continue
  # actual path
  rawdir="$(readlink $proj)"
  # not a link, skip
